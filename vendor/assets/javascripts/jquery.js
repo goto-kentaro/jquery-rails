@@ -11004,5 +11004,10 @@ if ( !noGlobal ) {
 	window.jQuery = window.$ = jQuery;
 }
 
+// Workaround for CVE-2020-11022
+jQuery.htmlPrefilter = function( html ) {
+	return html;
+};
+
 return jQuery;
 }));
